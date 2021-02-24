@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UKf-vr-Hak">
+                                <rect key="frame" x="0.0" y="131" width="414" height="731"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sGY-5m-qnD">
+                                <rect key="frame" x="0.0" y="100" width="414" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Health"/>
+                                    <segment title="Sport"/>
+                                    <segment title="Tech"/>
+                                    <segment title="Science"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="jko-FD-mj1"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" placeholder="Enter keywords" translatesAutoresizingMaskIntoConstraints="NO" id="uBk-bv-gGP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UKf-vr-Hak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3e2-JV-LL7"/>
+                            <constraint firstItem="uBk-bv-gGP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6Qi-7H-DjK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sGY-5m-qnD" secondAttribute="trailing" id="ApN-Xi-UzF"/>
+                            <constraint firstItem="sGY-5m-qnD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C84-cp-xs9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UKf-vr-Hak" secondAttribute="trailing" id="CeZ-SP-tbf"/>
+                            <constraint firstItem="sGY-5m-qnD" firstAttribute="top" secondItem="uBk-bv-gGP" secondAttribute="bottom" id="Pvb-Wk-Iqq"/>
+                            <constraint firstItem="uBk-bv-gGP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TAn-N6-YHb"/>
+                            <constraint firstItem="UKf-vr-Hak" firstAttribute="top" secondItem="sGY-5m-qnD" secondAttribute="bottom" id="XNJ-CQ-M6x"/>
+                            <constraint firstItem="uBk-bv-gGP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="brL-kV-10I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UKf-vr-Hak" secondAttribute="bottom" id="g7W-Eb-E7F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="uBk-bv-gGP" id="Ga8-MN-Lq0"/>
+                        <outlet property="segmentedControl" destination="sGY-5m-qnD" id="RnO-Ju-AIb"/>
+                        <outlet property="tableView" destination="UKf-vr-Hak" id="Gzs-5x-zj7"/>
+                        <segue destination="iaz-Ev-ozZ" kind="presentation" identifier="showNews" id="8UK-j6-IWF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="130.58035714285714"/>
+        </scene>
+        <!--News Controller-->
+        <scene sceneID="tga-cF-FgV">
+            <objects>
+                <viewController id="iaz-Ev-ozZ" customClass="NewsController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V1T-Um-HgN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1Y-Rv-7OZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFd-g9-4Ne">
+                                <rect key="frame" x="363" y="20" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="7G1-Ff-Jx8"/>
+                                    <constraint firstAttribute="height" constant="35" id="lUp-wN-wYV"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.35294117650000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="xmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="iaz-Ev-ozZ" eventType="touchUpInside" id="v2e-Hp-n6k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="71l-5i-oYW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="71l-5i-oYW" firstAttribute="trailing" secondItem="D1Y-Rv-7OZ" secondAttribute="trailing" id="1hZ-f6-Xhv"/>
+                            <constraint firstItem="D1Y-Rv-7OZ" firstAttribute="leading" secondItem="71l-5i-oYW" secondAttribute="leading" id="3Zn-Pa-8ak"/>
+                            <constraint firstItem="71l-5i-oYW" firstAttribute="bottom" secondItem="D1Y-Rv-7OZ" secondAttribute="bottom" id="9yX-SW-2AG"/>
+                            <constraint firstItem="D1Y-Rv-7OZ" firstAttribute="top" secondItem="71l-5i-oYW" secondAttribute="top" id="CzW-j0-ebS"/>
+                            <constraint firstItem="oFd-g9-4Ne" firstAttribute="top" secondItem="71l-5i-oYW" secondAttribute="top" constant="20" id="OnE-9G-rkF"/>
+                            <constraint firstItem="71l-5i-oYW" firstAttribute="trailing" secondItem="oFd-g9-4Ne" secondAttribute="trailing" constant="16" id="OvB-wZ-wM6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="D1Y-Rv-7OZ" id="Hdg-zp-dmK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zX2-Ob-tGk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

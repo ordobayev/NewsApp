@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="80" id="KGk-i7-Jjw" customClass="NewsCell" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newspaper" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Uk-co-mza">
+                        <rect key="frame" x="16" y="8" width="44" height="44"/>
+                        <color key="tintColor" red="0.0" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="n1k-iC-Hwc"/>
+                            <constraint firstAttribute="height" constant="44" id="vFZ-G6-Hfp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoR-qI-vg5">
+                        <rect key="frame" x="72" y="8" width="232" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIq-yv-Nwb">
+                        <rect key="frame" x="273" y="55" width="31" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" systemColor="systemGray2Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="EIq-yv-Nwb" secondAttribute="bottom" constant="8" id="27k-MC-ThN"/>
+                    <constraint firstAttribute="trailing" secondItem="EIq-yv-Nwb" secondAttribute="trailing" constant="16" id="Apt-J1-IrB"/>
+                    <constraint firstAttribute="trailing" secondItem="GoR-qI-vg5" secondAttribute="trailing" constant="16" id="Uil-Ba-03g"/>
+                    <constraint firstItem="GoR-qI-vg5" firstAttribute="leading" secondItem="8Uk-co-mza" secondAttribute="trailing" constant="12" id="VxO-W4-REr"/>
+                    <constraint firstItem="GoR-qI-vg5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dEV-Wb-TST"/>
+                    <constraint firstItem="8Uk-co-mza" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="laY-zk-A09"/>
+                    <constraint firstItem="EIq-yv-Nwb" firstAttribute="top" secondItem="GoR-qI-vg5" secondAttribute="bottom" constant="26.5" id="rnO-Db-nPq"/>
+                    <constraint firstItem="8Uk-co-mza" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="v3j-fx-BTS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="EIq-yv-Nwb" id="pDM-f3-S8g"/>
+                <outlet property="newsImage" destination="8Uk-co-mza" id="9ZB-V9-08z"/>
+                <outlet property="titleLabel" destination="GoR-qI-vg5" id="SPe-NJ-WcD"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
